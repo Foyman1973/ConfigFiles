@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Data>
-   <Config version="6" updated="02-JULY-2019">
+   <Config version="7" updated="01-NOV-2019">
       <!-- Core configurations, add additional as necessary-->
       <SMTP value="smtp.yourdomain.org"/>
-      <FROM value=".sender@yourdomain.org"/>
+      <FROM value="sender@yourdomain.org"/>
       <FROM_TEST value="test.sender@yourdomain.org"/>
       <TO value="recipient@yourdomain.org"/>
       <TO_TEST value="test.recipient@yourdomain.org"/>
-      <ReportTitle value="DaVita vSphere Tagging Engine"/>
+      <ReportTitle value="Report Title"/>
       <vCenterList value="D:\SCRIPTS\CONTROL\vCenterList.csv"/>
       <vCenterList_TEST value="D:\SCRIPTS\CONTROL\vCenterList_TEST.csv"/>
       <DevMode value="TRUE"/>
@@ -17,6 +17,23 @@
       <DoTagging value="TRUE"/>
       <DoReporting value="FALSE"/>
       <SendMail value="TRUE"/>
+      <!-- Used for Snapshot Cleanup -->
+      <SnapshotRetentionDays value="7"/>
+      <SnapshotMaxRetentionDays value="14"/>
+      <!-- Used for InfoBlox API strings -->
+      <WebURI value="https://ipam.yourdomain.org/wapi/v#.#.#/"/>
+      <aRecordSet value="record:a?_return_as_object=1"/>
+      <aRecordGet value="record:a?name="/>
+      <ptrRecordSet value="record:ptr?_return_as_object=1"/>
+      <ptrRecordGet value="record:ptr?ipv4addr="/>
+      <hostRecordSet value="record:host?_return_as_object=1"/>
+      <hostRecordGet value="record:host?_return_as_object=1&amp;name:="/>
+      <ipSearch value="ipv4address?ip_address="/>
+      <networkGet value="network?_return_as_object=1&amp;network="/>
+      <Networks value='network?_return_fields%2b=extattrs&amp;*Purpose~=SearchKeyword'/>
+      <view value="IPAM-ViewName"/>
+      <Login value="APIServiceAccountName"/>
+      <Hash value="01000000d08c9ddf0115d1118c7a00c04fc97eb01000000cd0583c9e751cb449999bc76b7440de1000000002000000000003660000c00000010000000a899a78af31b32a9ef3c22ef7ba46cac0000000004800000a000000010000000aadeb120c3c3053094c2fa6497e0aba20000000918a09f9f38ebb5e7ea8d089d2026d429860c6ce2d3445c82185df159c659140000006f4c35efbd68451acef3477aebe49de0766dcd7"/>
       <!-- Used for storing CSS formats -->
       <TableFormats>
       	<Blue value="&lt;style type=&quot;text/css&quot;&gt;body{font-family:calibri;font-size:10pt;font-weight:normal;color:black;}th{text-align:center; text-shadow: 1px 1px black; background-color:#00417c; color:#FFFFFF; font-weight:bold; font-size:12px;}td{background-color:#F5F5F5; font-weight:normal; font-size:10px; padding: 3px 10px 3px 10px;}&lt;/style&gt;"/>
@@ -27,6 +44,6 @@
    </Config>
    <!-- Section for listing local or remote report output folders-->
    <ReportFiles>
-      <ReportFile ReportFileType="SQL" ReportFileName="\\DEN3W1SQLMD01.davita.corp\vCenterReports"/>
+      <ReportFile ReportFileType="SQL" ReportFilePath="\\SomeUNC\SomePath\ReportName"/>
    </ReportFiles>
 </Data>
